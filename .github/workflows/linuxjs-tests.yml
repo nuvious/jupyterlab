@@ -64,7 +64,7 @@ jobs:
             js-workspaces,
           ]
       fail-fast: false
-    runs-on: ubuntu-22.04
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 40
     steps:
       - name: Checkout
