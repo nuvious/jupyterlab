@@ -13,7 +13,7 @@ jobs:
     name: Update Galata References
     if: ${{ github.event.issue.pull_request && (contains(github.event.comment.body, 'please update galata snapshots') || contains(github.event.comment.body, 'please update snapshots')) }}
     timeout-minutes: 80
-    runs-on: ubuntu-22.04
+    runs-on: [self-hosted, linux, x64]
 
     steps:
       - name: React to the triggering comment
@@ -63,7 +63,7 @@ jobs:
     name: Update Documentation Snapshots
     if: ${{ github.event.issue.pull_request && (contains(github.event.comment.body, 'please update documentation snapshots') || contains(github.event.comment.body, 'please update snapshots')) }}
     timeout-minutes: 80
-    runs-on: ubuntu-22.04
+    runs-on: [self-hosted, linux, x64]
 
     # Python version is frozen through strategy.matrix.python-version
     # Python dependencies are frozen in the installation step
